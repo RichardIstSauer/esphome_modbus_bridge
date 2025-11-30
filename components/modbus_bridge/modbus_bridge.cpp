@@ -950,8 +950,8 @@ void ModbusBridgeComponent::append_crc(std::vector<uint8_t> &data) {
       else crc >>= 1;
     }
   }
-  data.push_back(crc & 0xFF);
   data.push_back((crc >> 8) & 0xFF);
+  data.push_back(crc & 0xFF);
 }
 
 void ModbusBridgeComponent::set_debug(bool debug) {
